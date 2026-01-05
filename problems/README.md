@@ -1,5 +1,5 @@
 # Business Use Case: E-Commerce Sales Analytics with Hive Partitioning and Bucketing  
-* Problem Statement
+Problem Statement
  * An e-commerce company processes massive amounts of sales data from customers across different regions and countries. The data is queried frequently for analytics purposes, such as:
  * Daily Sales Reports by country and region.
  * Product Sales Trends to identify the top-selling products in specific regions.
