@@ -22,9 +22,11 @@ Sales Table (sales_data)
   * region: STRING
 
 Sample Data:  
-  * 1, 101, Electronics, 2001,500.00, 2023-08-01, US, North America
-  * 2, 102, Electronics, 2002, 300.00, 2023-08-01, US, North America
-  * 3, 103, Furniture, 2003, 700.00, 2023-08-02, UK, Europe
-  * 4, 104, Furniture, 2004, 800.00, 2023-08-03, UK, Europe
-  * 5, 105, Clothing, 2005, 200.00, 2023-08-03, IN, Asia
-  * 6, 106, Clothing, 2006, 600.00, 2023-08-03, IN, Asia
+|sale_id|product_id|product_category|customer_id|sale_amount|sale_date|country|region|
+|-------|---------|-----------------|-----------|-----------|---------|-------|-------|
+|1| 101| Electronics| 2001|500.00| 2023-08-01| US| North America|
+|2| 102| Electronics| 2002| 300.00|2023-08-01| US| North America|
+|3| 103| Furniture| 2003| 700.00| 2023-08-02| UK|Europe|
+|4| 104| Furniture| 2004| 800.00|2023-08-03| UK| Europe|
+|5| 105| Clothing| 2005| 200.00| 2023-08-03| IN| Asia|
+|6| 106| Clothing| 2006| 600.00| 2023-08-03| IN| Asia|
