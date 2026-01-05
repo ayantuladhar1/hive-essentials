@@ -12,7 +12,7 @@ The dataset is large (millions of records), and querying it without optimization
 
 Sample Data  
 * Sales Table (sales_data)
- * Columns:
+  * Columns:
   *sale_id: INT
   *product_id: INT
   *product_category: STRING
