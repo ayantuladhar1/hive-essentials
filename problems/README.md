@@ -12,14 +12,14 @@ The dataset is large (millions of records), and querying it without optimization
 
 Sales Table (sales_data)  
   * Columns:
-  * sale_id: INT
-  * product_id: INT
-  * product_category: STRING
-  * customer_id: INT
-  * sale_amount: FLOAT
-  * sale_date: DATE
-  * country: STRING
-  * region: STRING
+   * sale_id: INT
+   * product_id: INT
+   * product_category: STRING
+   * customer_id: INT
+   * sale_amount: FLOAT
+   * sale_date: DATE
+   * country: STRING
+   * region: STRING
 
 Sample Data:  
 |sale_id|product_id|product_category|customer_id|sale_amount|sale_date|country|region|
