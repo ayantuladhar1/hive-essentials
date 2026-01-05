@@ -10,9 +10,9 @@ The dataset is large (millions of records), and querying it without optimization
  * Speed up queries for product categories.
  * Use partitioning and bucketing to manage this large dataset efficiently in Hive.
 
-* Sample Data
+Sample Data  
 * Sales Table (sales_data)
-  *Columns:
+ * Columns:
   *sale_id: INT
   *product_id: INT
   *product_category: STRING
