@@ -154,6 +154,7 @@ INSERT INTO TABLE customers SELECT …
 Managed Tables
 * Hive manages both metadata and data
 * Dropping the table deletes underlying data
+
 External Tables
 * Hive manages only metadata
 * Data remains in HDFS when table is dropped
