@@ -68,8 +68,8 @@ Hive organizes data logically as:
 Database   
 └── Table  
       └── Partition  
-           └── Bucket  
-                └── Files  
+            └── Bucket  
+                  └── Files  
 Each level helps improve query performance and manageability
 # Partitioning in Hive
 * It splits a table into separate directories in HDFS based on the value of one or more columns.
