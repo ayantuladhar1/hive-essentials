@@ -72,6 +72,85 @@ Database
                 └── Files
 Each level helps improve query performance and manageability
 
+# Partitioning in Hive
+* It splits a table into separate directories in HDFS based on the value of one or more columns.
+* Think of it as folder-level segregation of data.
+* Example:
+```sql
+ CREATE TABLE sales (
+   order_id INT,
+   product STRING,
+   amount DOUBLE
+ )
+ PARTITIONED BY (year INT);
+```
+* HDFS Layout
+```swift
+ /warehouse/sales/year=2023/
+ /warehouse/sales/year=2024/
+ /warehouse/sales/year=2025/
+```
+* Example
+* When you run:
+```sql
+ SELECT * FROM sales WHERE year = 2024;
+```
+* Hive only scans:
+```swift
+ /year=2024/
+```
+* Instead of entire table
+
+* Advantages includes:
+  * Huge performance boost
+  * Less data scanned
+  * Faster query execution
+
+* When to use
+  * Columns with low cardinality
+  * Date,year,country,region
+
+* Avoid partitioning on
+  * High-cardinality fields like user_id, order_id
+
+# Bucketing in Hive
+* Bucketing divides data into a file-level distribution inside a table or partition.
+* Example
+```sql
+Bucket customers by customer_id into 4 buckets:
+CREATE TABLE customers (
+  customer_id INT,
+  name STRING,
+  city STRING
+)
+CLUSTERED BY (customer_id) INTO 4 BUCKETS;
+```
+* Hive calculates:
+```python
+hash(customer_id) % 4
+```
+* And places the row into one of 4 files.
+
+* Why it matters
+  * Faster JOINs
+  * Faster GROUP BY
+  * Enables map-side joins
+
+* Advantages
+  * Optimized joins
+  * Even data distribution
+  * Better performance on aggregations
+
+* Requirements
+```python
+SET hive.enforce.bucketing=true;
+```
+* Data must be inserted using:
+```sql
+INSERT INTO TABLE customers SELECT …
+```
+* Direct file copy won't respect bucketing
+
 # Managed vs External Tables(Conceptual)
 Managed Tables
 * Hive manages both metadata and data
