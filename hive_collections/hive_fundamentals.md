@@ -64,14 +64,13 @@ This provides:
 * Faster ingestion pipelines
 
 # Hive Data Organization  
-Hive organizes data logically as:
-Database
- └── Table
+Hive organizes data logically as:  
+Database 
+└── Table
       └── Partition
            └── Bucket
                 └── Files
 Each level helps improve query performance and manageability
-
 # Partitioning in Hive
 * It splits a table into separate directories in HDFS based on the value of one or more columns.
 * Think of it as folder-level segregation of data.
