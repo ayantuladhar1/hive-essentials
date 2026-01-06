@@ -63,7 +63,7 @@ This provides:
 * Support for evolving schemas
 * Faster ingestion pipelines
 
-# Hive Data Organization
+# Hive Data Organization  
 Hive organizes data logically as:
 Database
  └── Table
