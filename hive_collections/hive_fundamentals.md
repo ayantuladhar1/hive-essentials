@@ -70,6 +70,7 @@ Database
       └── Partition
            └── Bucket
                 └── Files
+                
 Each level helps improve query performance and manageability
 
 # Partitioning in Hive
