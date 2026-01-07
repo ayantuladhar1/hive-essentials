@@ -1,14 +1,14 @@
 # Business Use Case: Telecommunication Data Analytics with Hive Partitioning and Bucketing  
 Problem Statement
 * A telecommunication company processes vast amounts of data related to customer calls, SMS usage, and data consumption. This data is used to analyze telecom usage trends, such as:
-* Call Durations by region and date.
-* Top Data Users in specific regions.
-* SMS usage trends based on customer demographics.
+  * Call Durations by region and date.
+  * Top Data Users in specific regions.
+  * SMS usage trends based on customer demographics.
 
-Given the large scale of the dataset (millions of records), querying the data for business insights is slow without proper optimization. The company wants to:
-* Optimize queries to retrieve data based on call date and region for reporting purposes.
-* Speed up queries to identify heavy data users.
-* Use partitioning and bucketing to manage the dataset efficiently in Hive, improving query performance and storage optimization.
+* Given the large scale of the dataset (millions of records), querying the data for business insights is slow without proper optimization. The company wants to:
+  * Optimize queries to retrieve data based on call date and region for reporting purposes.
+  * Speed up queries to identify heavy data users.
+  * Use partitioning and bucketing to manage the dataset efficiently in Hive, improving query performance and storage optimization.
 
 Sample Data: 
 Call Data Table (call_data)
