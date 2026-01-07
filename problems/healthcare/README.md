@@ -37,11 +37,13 @@ Data Usage Table (data_usage)
   * usage_date: DATE
 
 Sample Data:
-1, 101, 2.5, North, 2023-08-01
-2, 102, 3.0, South, 2023-08-02
-3, 103, 1.2, East, 2023-08-03
-4, 104, 5.5, West, 2023-08-04
-5, 105, 10.0, North, 2023-08-05
+|usage_id| customer_id| data_used| region| usage_date|
+|--------|------------|----------|-------|-----------|
+|1| 101| 2.5| North| 2023-08-01|
+|2| 102| 3.0| South| 2023-08-02|
+|3| 103| 1.2| East| 2023-08-03|
+|4| 104| 5.5| West| 2023-08-04|
+|5| 105| 10.0| North| 2023-08-05|
 
 SMS Data Table (sms_data)
 * Columns:
@@ -52,8 +54,10 @@ SMS Data Table (sms_data)
   * sms_date: DATE
 
 Sample Data:
-1, 101, 5, North, 2023-08-01
-2, 102, 10, South, 2023-08-02
-3, 103, 8, East, 2023-08-03
-4, 104, 7, West, 2023-08-04
-5, 105, 15, North, 2023-08-05
+|sms_id| customer_id| sms_count| region| sms_date|
+|------|------------|----------|-------|---------|
+|1| 101| 5| North| 2023-08-01|
+|2| 102| 10| South| 2023-08-02|
+|3| 103| 8| East| 2023-08-03|
+|4| 104| 7| West| 2023-08-04|
+|5| 105| 15| North| 2023-08-05|
