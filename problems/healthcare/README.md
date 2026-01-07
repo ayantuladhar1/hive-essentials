@@ -31,14 +31,14 @@ Sample Data:
 
 Prescription Data Table (prescriptions)
 * Columns:
- * prescription_id: INT
- *  visit_id: INT
- *  patient_age: INT
- *  patient_gender: STRING
- *  drug_name: STRING
- *  dosage: STRING
- *  region: STRING
- *  prescription_date: DATE
+  * prescription_id: INT
+  *  visit_id: INT
+  *  patient_age: INT
+  *  patient_gender: STRING
+  *  drug_name: STRING
+  *  dosage: STRING
+  *  region: STRING
+  *  prescription_date: DATE
 
 Sample Data:
 |prescription_id| visit_id| patient_age| patient_gender| drug_name| dosage| region| presciption_date|
