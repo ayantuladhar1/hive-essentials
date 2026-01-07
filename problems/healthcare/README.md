@@ -10,7 +10,7 @@ Given the large scale of the dataset (millions of records), querying the data fo
 * Speed up queries to identify heavy data users.
 * Use partitioning and bucketing to manage the dataset efficiently in Hive, improving query performance and storage optimization.
 
-Sample Data:
+Sample Data: 
 Call Data Table (call_data)
 * Columns:
   * call_id: INT
