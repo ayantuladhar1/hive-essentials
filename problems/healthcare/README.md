@@ -9,7 +9,7 @@ Problem Statement
 Optimize queries to retrieve data based on visit date and region for reporting purposes.
   * Speed up queries for specific prescription drug trends and patient demographics.
   * Use partitioning and bucketing to manage the dataset efficiently in Hive, improving query performance and storage optimization.
-  * 
+    
 Sample Data
 Medical Visits Table (medical_visits)
 * Columns:
