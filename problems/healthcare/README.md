@@ -10,7 +10,7 @@ Given the large scale of the dataset (millions of records), querying the data fo
 * Speed up queries to identify heavy data users.
 * Use partitioning and bucketing to manage the dataset efficiently in Hive, improving query performance and storage optimization.
 
-Sample Data
+Sample Data:
 Call Data Table (call_data)
 * Columns:
   * call_id: INT
@@ -20,11 +20,13 @@ Call Data Table (call_data)
   * call_date: DATE
 
 Sample Data:
-1, 101, 15.5, North, 2023-08-01
-2, 102, 20.2, South, 2023-08-02
-3, 103, 5.7, East, 2023-08-03
-4, 104, 12.4, West, 2023-08-04
-5, 105, 25.0, North, 2023-08-05
+|call_id| customer_id| call_duration| region| call_date|
+|-------|------------|--------------|-------|----------|
+|1| 101| 15.5| North| 2023-08-01|
+|2| 102| 20.2| South| 2023-08-02|
+|3| 103| 5.7| East| 2023-08-03|
+|4| 104| 12.4| West| 2023-08-04|
+|5| 105| 25.0| North| 2023-08-05|
 
 Data Usage Table (data_usage)
 * Columns:
