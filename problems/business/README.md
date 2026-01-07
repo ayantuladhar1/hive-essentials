@@ -5,7 +5,7 @@ Problem Statement
    * Product Sales Trends to identify the top-selling products in specific regions.
    * Customer Purchase Patterns for customer segmentation and targeted marketing.
 
-The dataset is large (millions of records), and querying it without optimization leads to slow performance. The company wants to:  
+* The dataset is large (millions of records), and querying it without optimization leads to slow performance. The company wants to:  
    * Optimize queries for specific date ranges (daily sales reports).
    * Speed up queries for product categories.
    * Use partitioning and bucketing to manage this large dataset efficiently in Hive.
