@@ -1,14 +1,14 @@
 # Business Use Case: E-Commerce Sales Analytics with Hive Partitioning and Bucketing  
 Problem Statement
  * An e-commerce company processes massive amounts of sales data from customers across different regions and countries. The data is queried frequently for analytics purposes, such as:
- * Daily Sales Reports by country and region.
- * Product Sales Trends to identify the top-selling products in specific regions.
- * Customer Purchase Patterns for customer segmentation and targeted marketing.
+   * Daily Sales Reports by country and region.
+   * Product Sales Trends to identify the top-selling products in specific regions.
+   * Customer Purchase Patterns for customer segmentation and targeted marketing.
 
 The dataset is large (millions of records), and querying it without optimization leads to slow performance. The company wants to:  
- * Optimize queries for specific date ranges (daily sales reports).
- * Speed up queries for product categories.
- * Use partitioning and bucketing to manage this large dataset efficiently in Hive.
+   * Optimize queries for specific date ranges (daily sales reports).
+   * Speed up queries for product categories.
+   * Use partitioning and bucketing to manage this large dataset efficiently in Hive.
 
 Sales Table (sales_data)  
   * Columns:
