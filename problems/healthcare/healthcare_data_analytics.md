@@ -27,10 +27,12 @@ Bucketing Strategy:
 * Create a file "medical_visits.csv" in HDFS and save it under path '/data/medical_visits.csv'
 * Create a file "prescriptions.csv" in HDFS and save it under path '/data/prescriptions.csv'
 * It will help Hive to load the files and save it under the tables later
+  
 # Step 2:
-	• We need to create 4 tables in Hive, first will be medical_visit_staging and medical_visit and second will be prescriptions_staging and prescriptions
-	• In Hive when we create a table and store as ORC or Parquet, it expects the data to be in ORC or Parquet format, which makes it inconvenience for us to directly load the data into the table as our data is in csv format.
-	• We will use the staging tables to load the data as csv
+* We need to create 4 tables in Hive, first will be medical_visit_staging and medical_visit and second will be prescriptions_staging and prescriptions
+* In Hive when we create a table and store as ORC or Parquet, it expects the data to be in ORC or Parquet format, which makes it inconvenience for us to directly load the data into the table as our data is in csv format.
+* We will use the staging tables to load the data as csv
+```sql
 	CREATE TABLE medical_visit_staging (
 	    visit_id INT,
 	    patient_id INT,
@@ -56,15 +58,16 @@ Bucketing Strategy:
 	ROW FORMAT DELIMITED
 	FIELDS TERMINATED BY ','
 	STORED AS TEXTFILE;
-
+```
 # Step 3:
-	•  Load the Data in Hive Table medical_visit_staging.
-	LOAD DATA INPATH '/data/medical_visits.csv' INTO TABLE medical_visit_staging; 
-	
-
-	• Load the Data in Hive Table prescriptions_staging.
-	LOAD DATA INPATH '/data/prescriptions.csv' INTO TABLE prescriptions_staging; 
-	
+* Load the Data in Hive Table medical_visit_staging.
+```sql
+LOAD DATA INPATH '/data/medical_visits.csv' INTO TABLE medical_visit_staging; 
+```
+* Load the Data in Hive Table prescriptions_staging.
+```sql
+LOAD DATA INPATH '/data/prescriptions.csv' INTO TABLE prescriptions_staging; 
+```	
 # Step 4:
 	• We will create medical_visit and prescriptions tables where we will Partition visit_date, region and bucket patient_id for medical_visit and Partition prescription_date, region and bucket visit_id for prescriptions where both of the tables would be stored as Parquet
 	CREATE TABLE medical_visit (
