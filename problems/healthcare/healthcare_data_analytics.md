@@ -65,6 +65,7 @@ Bucketing Strategy:
 LOAD DATA INPATH '/data/medical_visits.csv' INTO TABLE medical_visit_staging; 
 ```
 <img width="669" height="181" alt="image" src="https://github.com/user-attachments/assets/bb903835-b0bf-417a-9bda-ce33e9e8dca1" />
+
 * Load the Data in Hive Table prescriptions_staging.
 ```sql
 LOAD DATA INPATH '/data/prescriptions.csv' INTO TABLE prescriptions_staging; 
