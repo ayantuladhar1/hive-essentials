@@ -11,11 +11,11 @@ In this healthcare analytics scenario, we first design an optimization strategy 
 |Faster joins between visits & prescriptions|	Bucketing|	Reduces shuffle and optimizes join performance|
 |Patient-level & visit-level analytics|	Bucketing on join keys|	Even data distribution and efficient aggregations|
 
-Hive Table Design
+# Hive Table Design
 Partitioning Strategy:
-	• Partition by: visit_date, region (Medical Visits)
-	• Partition by: prescription_date, region (Prescriptions)
-	• Most healthcare reports are time-based, and region is a frequent filter for operational and regulatory reporting.
+	* Partition by: visit_date, region (Medical Visits)
+	* Partition by: prescription_date, region (Prescriptions)
+	* Most healthcare reports are time-based, and region is a frequent filter for operational and regulatory reporting.
 Bucketing Strategy:
 	• Bucket by: patient_id (Medical Visits)
 	• Bucket by: visit_id (Prescriptions)
