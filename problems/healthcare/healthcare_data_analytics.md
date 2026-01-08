@@ -124,8 +124,8 @@ SET hive.exec.dynamic.partition.mode = nonstrict;
 	    region
 	FROM sales_data_staging;
 ```
-
 <img width="710" height="179" alt="image" src="https://github.com/user-attachments/assets/e0a2af0e-949c-4fc3-ad4a-6407dd8e8ffb" />
+
 ```sql
 	INSERT INTO TABLE  prescriptions
 	PARTITION (prescription_date , region)
