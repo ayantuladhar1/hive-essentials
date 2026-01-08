@@ -71,6 +71,7 @@ LOAD DATA INPATH '/data/medical_visits.csv' INTO TABLE medical_visit_staging;
 LOAD DATA INPATH '/data/prescriptions.csv' INTO TABLE prescriptions_staging; 
 ```
 <img width="756" height="182" alt="image" src="https://github.com/user-attachments/assets/6692790b-797b-4420-bcb6-5547ae873d4f" />
+
 # Step 4:
 * We will create medical_visit and prescriptions tables where we will Partition visit_date, region and bucket patient_id for medical_visit and Partition prescription_date, region and bucket visit_id for prescriptions where both of the tables would be stored as Parquet.
 ```sql
@@ -101,12 +102,14 @@ LOAD DATA INPATH '/data/prescriptions.csv' INTO TABLE prescriptions_staging;
 	INTO 8 BUCKETS
 	STORED AS PARQUET;
 ```
+
 # Step 5:
 * Set the following properties in Hive for dynamic partition
 ```sql
 SET hive.exec.dynamic.partition = true;
 SET hive.exec.dynamic.partition.mode = nonstrict;
 ```
+
 # Step 6:
 * We will insert the data we loaded earlier from medical_visit_staging table to  medical_visit table and prescriptions_staging table to prescriptions table.
 ```sql
@@ -147,6 +150,7 @@ SHOW PARTITIONS medical_visit;
 SHOW PARTITIONS prescriptions;
 ```
 <img width="589" height="185" alt="image" src="https://github.com/user-attachments/assets/792955e1-6dbe-40c7-a73f-ae97802968b1" />
+
 # Step 8:
 Test Query
 ```sql
