@@ -146,7 +146,8 @@ SET hive.exec.dynamic.partition.mode = nonstrict;
 ```sql
 SHOW PARTITIONS medical_visit;
 ```
-<img width="764" height="182" alt="image" src="https://github.com/user-attachments/assets/3d2fdae7-8f9d-43c8-ba60-2cef32dfcd85" />
+<img width="586" height="175" alt="image" src="https://github.com/user-attachments/assets/6137db3b-47cd-4319-a3e5-b8d1400144d7" />
+
 ```sql
 SHOW PARTITIONS prescriptions;
 ```
