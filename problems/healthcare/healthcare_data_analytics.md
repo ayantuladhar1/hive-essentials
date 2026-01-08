@@ -1,5 +1,4 @@
-# Solution
-Solution Statement
+# Solution Statement
 In this healthcare analytics scenario, we first design an optimization strategy because, without optimization, analytical queries would scan the entire dataset, leading to poor performance as medical records, patient visits, and prescription data grow rapidly over time. As the healthcare organization processes millions of visit and prescription records across multiple regions and dates, inefficient queries increase compute time and cost. To support frequent reporting on patient visits, regional healthcare trends, prescription analysis, and demographic insights, Hive partitioning and bucketing are used to optimize query performance and data organization.
 
 # Optimization Statement
