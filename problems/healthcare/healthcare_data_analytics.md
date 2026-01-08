@@ -69,7 +69,8 @@ LOAD DATA INPATH '/data/medical_visits.csv' INTO TABLE medical_visit_staging;
 LOAD DATA INPATH '/data/prescriptions.csv' INTO TABLE prescriptions_staging; 
 ```	
 # Step 4:
-	• We will create medical_visit and prescriptions tables where we will Partition visit_date, region and bucket patient_id for medical_visit and Partition prescription_date, region and bucket visit_id for prescriptions where both of the tables would be stored as Parquet
+* We will create medical_visit and prescriptions tables where we will Partition visit_date, region and bucket patient_id for medical_visit and Partition prescription_date, region and bucket visit_id for prescriptions where both of the tables would be stored as Parquet.
+```sql
 	CREATE TABLE medical_visit (
 	    visit_id INT,
 	    patient_id INT,
@@ -96,14 +97,16 @@ LOAD DATA INPATH '/data/prescriptions.csv' INTO TABLE prescriptions_staging;
 	CLUSTERED BY (visit_id)
 	INTO 8 BUCKETS
 	STORED AS PARQUET;
-	
+```
 # Step 5:
-	• Set the following properties in Hive for dynamic partition
-	SET hive.exec.dynamic.partition = true;
-	SET hive.exec.dynamic.partition.mode = nonstrict;
-	
+* Set the following properties in Hive for dynamic partition
+```sql
+SET hive.exec.dynamic.partition = true;
+SET hive.exec.dynamic.partition.mode = nonstrict;
+```
 # Step 6:
-	• We will insert the data we loaded earlier from medical_visit_staging table to  medical_visit table and prescriptions_staging table to prescriptions table.
+* We will insert the data we loaded earlier from medical_visit_staging table to  medical_visit table and prescriptions_staging table to prescriptions table.
+```sql
 	INSERT INTO TABLE  medical_visit
 	PARTITION (visit_date, region)
 	SELECT
@@ -114,8 +117,6 @@ LOAD DATA INPATH '/data/prescriptions.csv' INTO TABLE prescriptions_staging;
 	    visit_date,
 	    region
 	FROM sales_data_staging;
-	
-	
 	
 	INSERT INTO TABLE  prescriptions
 	PARTITION (prescription_date , region)
@@ -128,7 +129,7 @@ LOAD DATA INPATH '/data/prescriptions.csv' INTO TABLE prescriptions_staging;
 	   dosage, region,
 	   prescription_date
 	FROM sales_data_staging;
-	
+```
 	
 # Step 7:
 	• We will verify the Partition.
