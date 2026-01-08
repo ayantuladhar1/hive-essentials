@@ -83,7 +83,7 @@ LOAD DATA INPATH '/data/prescriptions.csv' INTO TABLE prescriptions_staging;
 	    visit_date DATE,
 	    region STRING
 	)
-	CLUSTERED BY (patient_id)
+	CLUSTERED BY (visit_id)
 	INTO 8 BUCKETS
 	STORED AS PARQUET;
 	
@@ -112,7 +112,7 @@ SET hive.exec.dynamic.partition.mode = nonstrict;
 # Step 6:
 * We will insert the data we loaded earlier from medical_visit_staging table to  medical_visit table and prescriptions_staging table to prescriptions table.
 ```sql
-	INSERT INTO TABLE  medical_visit
+	INSERT INTO TABLE medical_visit
 	PARTITION (visit_date, region)
 	SELECT
 	    visit_id,
@@ -121,12 +121,12 @@ SET hive.exec.dynamic.partition.mode = nonstrict;
 	    treatment,
 	    visit_date,
 	    region
-	FROM sales_data_staging;
+	FROM medical_visit_staging;
 ```
 <img width="710" height="179" alt="image" src="https://github.com/user-attachments/assets/e0a2af0e-949c-4fc3-ad4a-6407dd8e8ffb" />
 
 ```sql
-	INSERT INTO TABLE  prescriptions
+	INSERT INTO TABLE prescriptions
 	PARTITION (prescription_date , region)
 	SELECT
 	   prescription_id,
@@ -136,7 +136,7 @@ SET hive.exec.dynamic.partition.mode = nonstrict;
 	   drug_name,
 	   dosage, region,
 	   prescription_date
-	FROM sales_data_staging;
+	FROM prescriptions_staging;
 ```
 <img width="764" height="182" alt="image" src="https://github.com/user-attachments/assets/df4b5b67-fba7-4611-8658-4c9b1612cc07" />
 
