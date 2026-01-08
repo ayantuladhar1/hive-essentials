@@ -64,10 +64,12 @@ Bucketing Strategy:
 ```sql
 LOAD DATA INPATH '/data/medical_visits.csv' INTO TABLE medical_visit_staging; 
 ```
+<img width="669" height="181" alt="image" src="https://github.com/user-attachments/assets/bb903835-b0bf-417a-9bda-ce33e9e8dca1" />
 * Load the Data in Hive Table prescriptions_staging.
 ```sql
 LOAD DATA INPATH '/data/prescriptions.csv' INTO TABLE prescriptions_staging; 
-```	
+```
+<img width="756" height="182" alt="image" src="https://github.com/user-attachments/assets/6692790b-797b-4420-bcb6-5547ae873d4f" />
 # Step 4:
 * We will create medical_visit and prescriptions tables where we will Partition visit_date, region and bucket patient_id for medical_visit and Partition prescription_date, region and bucket visit_id for prescriptions where both of the tables would be stored as Parquet.
 ```sql
@@ -117,7 +119,9 @@ SET hive.exec.dynamic.partition.mode = nonstrict;
 	    visit_date,
 	    region
 	FROM sales_data_staging;
-	
+```
+<img width="710" height="179" alt="image" src="https://github.com/user-attachments/assets/e0a2af0e-949c-4fc3-ad4a-6407dd8e8ffb" />
+```sql
 	INSERT INTO TABLE  prescriptions
 	PARTITION (prescription_date , region)
 	SELECT
@@ -130,17 +134,23 @@ SET hive.exec.dynamic.partition.mode = nonstrict;
 	   prescription_date
 	FROM sales_data_staging;
 ```
-	
-# Step 7:
-	• We will verify the Partition.
-	SHOW PARTITIONS medical_visit;
-	
+<img width="764" height="182" alt="image" src="https://github.com/user-attachments/assets/df4b5b67-fba7-4611-8658-4c9b1612cc07" />
 
-	• SHOW PARTITIONS prescriptions;
-	
+# Step 7:
+* We will verify the Partition.
+```sql
+SHOW PARTITIONS medical_visit;
+```
+<img width="764" height="182" alt="image" src="https://github.com/user-attachments/assets/3d2fdae7-8f9d-43c8-ba60-2cef32dfcd85" />
+```sql
+SHOW PARTITIONS prescriptions;
+```
+<img width="589" height="185" alt="image" src="https://github.com/user-attachments/assets/792955e1-6dbe-40c7-a73f-ae97802968b1" />
 # Step 8:
-	• Test Query
-	• SELECT * FROM medical_visit WHERE visit_date = '2023-09-01' AND region = 'North'; 
-	
-	
-<img width="911" height="5232" alt="image" src="https://github.com/user-attachments/assets/189eca0c-baff-4a63-a354-d9179c3ee92f" />
+Test Query
+```sql
+SELECT * FROM medical_visit WHERE visit_date = '2023-09-01' AND region = 'North'; 
+```
+<img width="716" height="31" alt="image" src="https://github.com/user-attachments/assets/0fe17c86-484f-4c09-b02b-6474d95f19a1" />
+
+
