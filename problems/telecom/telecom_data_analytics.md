@@ -80,14 +80,19 @@ Bucketing Strategy:
 ```sql
 LOAD DATA INPATH '/data/call_data.csv' INTO TABLE call_data_staging; 
 ```
+<img width="580" height="162" alt="image" src="https://github.com/user-attachments/assets/b2a4834f-f54e-4acd-9c59-3252db12c396" />
+
 * Load the Data in Hive Table data_usage_staging.
 ```sql
 LOAD DATA INPATH '/data/data_usage.csv' INTO TABLE data_usage_staging; 
 ```
+<img width="591" height="200" alt="image" src="https://github.com/user-attachments/assets/b4e9f67d-7745-4455-9ede-87c13bde4d0b" />
+
 * Load the Data in Hive Table sms_data_staging.
 ```sql
 LOAD DATA INPATH '/data/sms_data.csv' INTO TABLE sms_data_staging; 
 ```
+<img width="578" height="204" alt="image" src="https://github.com/user-attachments/assets/eeb2c919-d00b-44ad-a700-79eb1d88771e" />
 
 # Step 4:
 * We will create call_data, data_usage and sms_data tables where we will Partition region, call_date and bucket customer_id for call_data table, Partition region, usage_date and bucket customer_id for data_usage table and Partition region, sms_date and bucket customer_id for sms_data table, where all the tables would be stored as Parquet.
@@ -152,7 +157,8 @@ SET hive.exec.dynamic.partition.mode = nonstrict;
 	FROM 
 	  call_data_staging;
 ```
-	
+<img width="495" height="205" alt="image" src="https://github.com/user-attachments/assets/0d5f6193-8bbd-4a11-bb7e-97f4bcde40a6" />
+
 ```sql
 	INSERT INTO data_usage PARTITION (region, usage_date) 
 	SELECT 
@@ -164,7 +170,8 @@ SET hive.exec.dynamic.partition.mode = nonstrict;
 	FROM 
 	  data_usage_staging;
 ```
-	
+<img width="507" height="203" alt="image" src="https://github.com/user-attachments/assets/e2a69bb1-357d-4981-af3c-fe61ff291f22" />
+
 ```sql
 	INSERT INTO TABLE sms_data PARTION (region, sms_date) 
 	SELECT 
@@ -176,21 +183,30 @@ SET hive.exec.dynamic.partition.mode = nonstrict;
 	FROM 
 	  sms_data_staging;
 ```	
-	
+<img width="490" height="204" alt="image" src="https://github.com/user-attachments/assets/cb9fe4b7-b0d8-4fe3-ac21-006c24afa376" />
+
 # Step 7:
 * We will verify the Partition.
 ```sql
 SHOW PARTITIONS call_data;
 ```
+<img width="512" height="176" alt="image" src="https://github.com/user-attachments/assets/174869fc-1321-4212-b7cf-0fadab143635" />
+
 ```sql
 SHOW PARTITIONS data_usage;
 ```
+<img width="528" height="184" alt="image" src="https://github.com/user-attachments/assets/c87b3b9b-ba45-4590-8ae1-ec9c9e38b5ce" />
+
 ```sql
 SHOW PARTITIONS data_usage;
 ```
+<img width="510" height="179" alt="image" src="https://github.com/user-attachments/assets/d1188cf6-fd10-46d3-a475-fc8d046cb751" />
+
 
 # Step 8:
 * Test Query
 ```sql
 SELECT * FROM call_data WHERE region = 'North' AND call_date = '2023-08-05';
 ```
+<img width="974" height="108" alt="image" src="https://github.com/user-attachments/assets/91e962a4-a6ac-48c2-bb22-da79694d3c01" />
+
