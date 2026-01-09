@@ -51,7 +51,9 @@ Bucketing Strategy:
 	ROW FORMAT DELIMITED
 	FIELDS TERMINATED BY ','
 	STORED AS TEXTFILE;
-	
+```
+
+```sql
 	CREATE TABLE data_usage_staging (
 	  usage_id INT,
 	  customer_id INT,
@@ -62,7 +64,9 @@ Bucketing Strategy:
 	ROW FORMAT DELIMITED
 	FIELDS TERMINATED BY ','
 	STORED AS TEXTFILE;
+```
 
+```sql
 	CREATE TABLE sms_data_staging (
 	  sms_id INT,
 	  customer_id INT,
