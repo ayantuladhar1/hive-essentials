@@ -26,3 +26,16 @@ hive-collections/
 ├── README.md          # Overview of Hive and repository structure
 ├── hive-fundaments.md   # One-page Hive concepts & architecture
 └── hive-commands.md   # HiveQL commands and hands-on examples
+problems/
+|
+├── business/
+        ├── README.md
+        ├── e-commerce_business_problem.md
+├── healthcare/
+        ├── README.md
+        ├── healthcare_data_analytics.md
+        ├── healthcare_test_queries.md
+├── telecom/
+        ├── README.md
+        ├── telecom_data_analytics.md
+        ├── telecommunication_test_queries.md
